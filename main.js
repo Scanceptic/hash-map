@@ -1,7 +1,7 @@
 function createHashMap() {
 	const hashMap = {};
 	function hash(key) {
-        console.log("Hash...");
+		console.log("Hash...");
 		let hashCode = 0;
 
 		const primeNumber = 31;
@@ -13,7 +13,7 @@ function createHashMap() {
 	}
 
 	function set(key, value) {
-        console.log("Set...");
+		console.log("Set...");
 		// hash key
 		const hashedKey = hash(key);
 		// set hashedKey value
@@ -22,7 +22,7 @@ function createHashMap() {
 	}
 
 	function get(key) {
-        console.log("Get...");
+		console.log("Get...");
 		// hash key
 		const hashedKey = hash(key);
 		// return hashedKey value
@@ -35,7 +35,7 @@ function createHashMap() {
 	}
 
 	function has(key) {
-        console.log("Has...");
+		console.log("Has...");
 		// hash key
 		const hashedKey = hash(key);
 		// return hashedKey value
@@ -48,7 +48,7 @@ function createHashMap() {
 	}
 
 	function remove(key) {
-        console.log("Remove...");
+		console.log("Remove...");
 		// hash key
 		const hashedKey = hash(key);
 		// return hashedKey value
@@ -62,11 +62,11 @@ function createHashMap() {
 	}
 
 	function length() {
-        console.log("Length...");
+		console.log("Length...");
 		// initialize length counter
 		let counter = 0;
 		// loop every key within hashmap ("this")
-		for (propKey in this.hashMap) {
+		for (prop in this.hashMap) {
 			// increment
 			counter++;
 		}
@@ -80,24 +80,31 @@ function createHashMap() {
 	}
 
 	function keys() {
-        console.log("Keys...");
+		console.log("Keys...");
 		// create array
 		const keyArray = [];
 		// loop every key in hashmap
-		for (propKey in this.hashMap) {
+		for (prop in this.hashMap) {
 			//push key to array
-			keyArray.push(propKey);
+			keyArray.push(prop);
 		}
 		return keyArray;
 	}
 
 	function values() {
-        console.log("Values...");
-    }
+		console.log("Values...");
+		// create array
+		const valueArray = [];
+		// loop every prop in hashmap
+		for (prop in this.hashMap) {
+			valueArray.push(this.hashMap[prop]);
+		}
+		return valueArray;
+	}
 
 	function entries() {
-        console.log("Entries...");
-    }
+		console.log("Entries...");
+	}
 
 	return {
 		hashMap,
