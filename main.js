@@ -97,6 +97,7 @@ function createHashMap() {
 		const valueArray = [];
 		// loop every prop in hashmap
 		for (prop in this.hashMap) {
+			// push hashMap[key] (=value) to array
 			valueArray.push(this.hashMap[prop]);
 		}
 		return valueArray;
@@ -104,6 +105,14 @@ function createHashMap() {
 
 	function entries() {
 		console.log("Entries...");
+		// create array
+		const pairArray = [];
+		// loop every prop in hashmap
+		for (prop in this.hashMap) {
+			// push [key, value] to array
+			pairArray.push([prop, this.hashMap[prop]]);
+		}
+		return pairArray;
 	}
 
 	return {
