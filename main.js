@@ -42,7 +42,18 @@ function HashMap() {
 		}
 	}
 
-	function remove(key) {}
+	function remove(key) {
+		// hash key
+		const hashedKey = hash(key);
+		// return hashedKey value
+		const value = this[hashedKey];
+		if (value === undefined) {
+			return false;
+		} else {
+			this[hashedKey] = undefined;
+			return true;
+		}
+	}
 
 	function length() {}
 
