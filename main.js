@@ -75,14 +75,8 @@ function createHashMap() {
 
 	function clear() {
 		console.log("Clear...");
-		console.log(this.hashMap);
-		// loop every key in hashmap
-		for (propKey in this.hashMap) {
-			// remove value
-			console.log(propKey);
-			propKey = undefined;
-			console.log(propKey);
-		}
+		// clear hashmap
+		this.hashMap = {};
 	}
 
 	function keys() {
