@@ -1,4 +1,4 @@
-function createHashMap() {
+function HashMap() {
 	function hash(key) {
 		let hashCode = 0;
 
@@ -11,9 +11,9 @@ function createHashMap() {
 	}
 
 	function set(key, value) {
-
-        // grow buckets size if needed
-    }
+        this[key] = value;
+		// grow buckets size if needed
+	}
 
 	function get(key) {}
 
@@ -44,3 +44,5 @@ function createHashMap() {
 		entries,
 	};
 }
+
+const test = HashMap();
