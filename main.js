@@ -1,6 +1,7 @@
 function createHashMap() {
 	const hashMap = {};
 	function hash(key) {
+        console.log("Hash...");
 		let hashCode = 0;
 
 		const primeNumber = 31;
@@ -12,6 +13,7 @@ function createHashMap() {
 	}
 
 	function set(key, value) {
+        console.log("Set...");
 		// hash key
 		const hashedKey = hash(key);
 		// set hashedKey value
@@ -20,6 +22,7 @@ function createHashMap() {
 	}
 
 	function get(key) {
+        console.log("Get...");
 		// hash key
 		const hashedKey = hash(key);
 		// return hashedKey value
@@ -32,6 +35,7 @@ function createHashMap() {
 	}
 
 	function has(key) {
+        console.log("Has...");
 		// hash key
 		const hashedKey = hash(key);
 		// return hashedKey value
@@ -44,6 +48,7 @@ function createHashMap() {
 	}
 
 	function remove(key) {
+        console.log("Remove...");
 		// hash key
 		const hashedKey = hash(key);
 		// return hashedKey value
@@ -57,25 +62,48 @@ function createHashMap() {
 	}
 
 	function length() {
+        console.log("Length...");
 		// initialize length counter
 		let counter = 0;
-		// get every key within hashmap ("this")
-		for (prop in this.hashMap) {
-			// if type string (instead of type function) increment
-			if (typeof prop === "string") {
-				counter++;
-			}
+		// loop every key within hashmap ("this")
+		for (propKey in this.hashMap) {
+			// increment
+			counter++;
 		}
 		return counter;
 	}
 
-	function clear() {}
+	function clear() {
+		console.log("Clear...");
+		console.log(this.hashMap);
+		// loop every key in hashmap
+		for (propKey in this.hashMap) {
+			// remove value
+			console.log(propKey);
+			propKey = undefined;
+			console.log(propKey);
+		}
+	}
 
-	function keys() {}
+	function keys() {
+        console.log("Keys...");
+		// create array
+		const keyArray = [];
+		// loop every key in hashmap
+		for (propKey in this.hashMap) {
+			//push key to array
+			keyArray.push(propKey);
+		}
+		return keyArray;
+	}
 
-	function values() {}
+	function values() {
+        console.log("Values...");
+    }
 
-	function entries() {}
+	function entries() {
+        console.log("Entries...");
+    }
 
 	return {
 		hashMap,
