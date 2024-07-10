@@ -1,4 +1,4 @@
-function HashMap() {
+function createHashMap() {
 	function hash(key) {
 		let hashCode = 0;
 
@@ -9,4 +9,38 @@ function HashMap() {
 
 		return hashCode;
 	}
+
+	function set(key, value) {
+
+        // grow buckets size if needed
+    }
+
+	function get(key) {}
+
+	function has(key) {}
+
+	function remove(key) {}
+
+	function length() {}
+
+	function clear() {}
+
+	function keys() {}
+
+	function values() {}
+
+	function entries() {}
+
+	return {
+		hash,
+		set,
+		get,
+		has,
+		remove,
+		length,
+		clear,
+		keys,
+		values,
+		entries,
+	};
 }
