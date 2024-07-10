@@ -30,7 +30,17 @@ function HashMap() {
 		}
 	}
 
-	function has(key) {}
+	function has(key) {
+		// hash key
+		const hashedKey = hash(key);
+		// return hashedKey value
+		const value = this[hashedKey];
+		if (value === undefined) {
+			return false;
+		} else {
+			return true;
+		}
+	}
 
 	function remove(key) {}
 
