@@ -11,11 +11,24 @@ function HashMap() {
 	}
 
 	function set(key, value) {
-        this[key] = value;
+		// hash key
+		const hashedKey = hash(key);
+		// set hashedKey value
+		this[hashedKey] = value;
 		// grow buckets size if needed
 	}
 
-	function get(key) {}
+	function get(key) {
+		// hash key
+		const hashedKey = hash(key);
+		// return hashedKey value
+		const value = this[hashedKey];
+		if (value === undefined) {
+			return null;
+		} else {
+			return value;
+		}
+	}
 
 	function has(key) {}
 
