@@ -1,4 +1,5 @@
-function HashMap() {
+function createHashMap() {
+	const hashMap = {};
 	function hash(key) {
 		let hashCode = 0;
 
@@ -14,7 +15,7 @@ function HashMap() {
 		// hash key
 		const hashedKey = hash(key);
 		// set hashedKey value
-		this[hashedKey] = value;
+		this.hashMap[hashedKey] = value;
 		// grow buckets size if needed
 	}
 
@@ -22,7 +23,7 @@ function HashMap() {
 		// hash key
 		const hashedKey = hash(key);
 		// return hashedKey value
-		const value = this[hashedKey];
+		const value = this.hashMap[hashedKey];
 		if (value === undefined) {
 			return null;
 		} else {
@@ -34,7 +35,7 @@ function HashMap() {
 		// hash key
 		const hashedKey = hash(key);
 		// return hashedKey value
-		const value = this[hashedKey];
+		const value = this.hashMap[hashedKey];
 		if (value === undefined) {
 			return false;
 		} else {
@@ -46,16 +47,27 @@ function HashMap() {
 		// hash key
 		const hashedKey = hash(key);
 		// return hashedKey value
-		const value = this[hashedKey];
+		const value = this.hashMap[hashedKey];
 		if (value === undefined) {
 			return false;
 		} else {
-			this[hashedKey] = undefined;
+			this.hashMap[hashedKey] = undefined;
 			return true;
 		}
 	}
 
-	function length() {}
+	function length() {
+		// initialize length counter
+		let counter = 0;
+		// get every key within hashmap ("this")
+		for (prop in this.hashMap) {
+			// if type string (instead of type function) increment
+			if (typeof prop === "string") {
+				counter++;
+			}
+		}
+		return counter;
+	}
 
 	function clear() {}
 
@@ -66,6 +78,7 @@ function HashMap() {
 	function entries() {}
 
 	return {
+		hashMap,
 		hash,
 		set,
 		get,
@@ -79,4 +92,4 @@ function HashMap() {
 	};
 }
 
-const test = HashMap();
+const test = createHashMap();
